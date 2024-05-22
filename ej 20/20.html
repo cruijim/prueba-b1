@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{text-align: center;}
+        img{width:20%}
+    </style>
+</head>
+<body>
+    <img src="8ball.png">
+    <h1>Escribe la pregunta que quieras (si o no)</h1>
+    <input type="text">
+    <button onclick="miF()">Enviar</button>
+    <h1 id="respuesta"></h1>
+    <script>
+        let a = ["ni de coña","puede que sí","estaba claro","si","no","no sé"];
+        function miF(){
+            let i = Math.floor(Math.random()*a.length);
+            document.getElementById("respuesta").textContent=a[i];
+        }
+    </script>
+</body>
+</html>

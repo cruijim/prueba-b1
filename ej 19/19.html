@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carlos</title>
+    <style>
+        body{display: flex;flex-direction: column; height: 100vh;
+            justify-content: center; align-items: center;}
+        div{display: flex;}
+        h1{color:chocolate; font-size: 8rem;}
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="minutos">0</h1>
+        <h1>:</h1>
+        <h1 id="segundos">0</h1>
+    </div>
+    <button onclick="pausar()" id="boton">Play</button>
+    <script>
+        let seg = 1;
+        let min = 1;
+        let estado = 1;
+        let a;
+        let b;
+        function pausar(){
+        if(estado==1){
+        function MiF(){
+            estado=2;
+            document.getElementById("segundos").textContent=seg%60;
+            seg = seg + 1; // seg++ o seg+=1
+        }
+        function MiF2(){
+            document.getElementById("minutos").textContent=min%60;
+            min = min + 1; // min++ o min+=1
+        }
+        a = setInterval(MiF,1000);
+        b = setInterval(MiF2,60000);
+        document.getElementById("boton").textContent="Pause";
+        }
+        else{
+            estado=1;
+            clearInterval(a);
+            clearInterval(b);
+            document.getElementById("boton").textContent="Play";
+        }}
+    </script>
+</body>
+</html>
